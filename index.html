@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>PG | Portfolio</title>
 </head>
+
 <body>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+    </nav> -->
+
+    <nav class="navbar">
+        <button class="navbar-button" onclick="showPage('home')">Home</button>
+        <button class="navbar-button" onclick="showPage('about')">About</button>
+        <button class="navbar-button" onclick="showPage('projects')">Projects</button>
+        <button class="navbar-button" onclick="showPage('contact')">Contact</button>
     </nav>
+    <div style="margin-top:80px; margin-left: 10px;">
+        <button class="toggle_button" onclick="toggleTheme()">🌓</button>
+    </div>
+    <div class="content">
+        <div id="about">
+            <h3>About:</h3>
+            <p>Hey, I am Priyanshi! I'm from Concord, North Carolina and attending Cox Mill High School. I have
+                participated in a couple of hackathons and opportunities through Hack Club. I have also started the
+                first Hack Club at my school: <a href="https://pgarg111.github.io/CMHS_HC_Website/">The High Voltage
+                    Hackers Hack Club.</a></hp>
+
+        </div>
+    </div>
+
 </body>
+
 </html>
