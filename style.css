@@ -40,7 +40,7 @@ body {
     margin: 0;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -85,7 +85,7 @@ body {
 
 }
 
-.navbar:hover{
+.navbar:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 10px 05px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(195, 192, 192, 0.81);
@@ -102,24 +102,211 @@ body {
     width: 2%;
     height: 2%;
     cursor: pointer;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:10px;
-    padding-right:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 5px;
     border: none;
     background: rgba(255, 255, 255, 0.763);
 }
 
-.toggle_button:hover{
+.toggle_button:hover {
     transform: scale(1.05);
     background: white;
 }
 
-.content{
+.content {
     display: block;
     box-sizing: border-box;
     max-width: var(--max-width);
     margin: 0 auto 2rem;
     padding: 1rem;
+}
+
+.music-widget {
+    display: inline-block;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 350px;
+    font-family: Courier, monospace;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    backdrop-filter: blur(10px);
+}
+
+.music-widget:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    color: var(--hg);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.track-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.album-art {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    object-fit: cover;
+}
+
+.track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-name {
+    color: var(--fg);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+}
+
+.track-name:hover {
+    color: var(--hg);
+    text-decoration: underline;
+}
+
+.track-artist {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.track-album {
+    color: var(--muted);
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.live-indicator {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--hg);
+}
+
+.equalizer {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+    height: 12px;
+}
+
+.bar {
+    width: 2px;
+    background: var(--hg);
+    border-radius: 2px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.bar:nth-child(1) {
+    height: 8px;
+    animation-delay: 0s;
+}
+
+.bar:nth-child(2) {
+    height: 12px;
+    animation-delay: 0.2s;
+}
+
+.bar:nth-child(3) {
+    height: 6px;
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0.5);
+    }
+}
+
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.spinner {
+    border: 2px solid var(--line);
+    border-top: 2px solid var(--hg);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 8px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.error-state {
+    padding: 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
 }
