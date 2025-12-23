@@ -11,6 +11,7 @@
     --hg: rgb(46, 183, 183);
     --bg3: linear-gradient(to bottom, #82c9d0a9, #4161928f);
     --line: #8492a6c0;
+    --a: rgb(9, 80, 118);
 
 }
 
@@ -22,6 +23,7 @@ body.dark-mode {
     --hg: #64689a;
     --bg3: linear-gradient(to bottom, #0f5f63a4, #0b16458f);
     --line: #53565bc0;
+    --a: rgb(132, 192, 225);
 
 }
 
@@ -122,6 +124,115 @@ body {
     max-width: var(--max-width);
     margin: 0 auto 2rem;
     padding: 1rem;
+}
+
+li::marker {
+    content: "‣ ";
+    color: black;
+}
+
+.club-link {
+    text-decoration: none;
+    color: var(--a);
+}
+
+.club-link:hover {
+    text-decoration: underline;
+    transform: scale(1.07);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+
+.project-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s;
+    transform: rotate(-2deg);
+    background-color: rgba(196, 228, 240, 0.508);
+    backdrop-filter: blur(5px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.project-card .context-tag {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 500;
+    background-color: #d1c4e9;
+    color: #4527a0;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 10px 0 20px 0; 
+}
+
+.project-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.project-card:hover {
+    transform: scale(1.1) rotate(0deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops to fill the space */
+    /* OR use: object-fit: contain; to show full image with letterboxing */
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.7;
+    }
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-content h3 {
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+    font-size: 1.5rem;
+}
+
+.project-content p {
+    color: #4b5563;
+    font-size: 1.1rem;
+}
+
+.project-repo {
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 3px 8px;
+    color: var(--fg);
+    background: gray;
+    
 }
 
 .music-widget {
