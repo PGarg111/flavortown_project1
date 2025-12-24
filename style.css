@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
     --max-width: 900px;
     --bg: #ffffff;
     --muted: #9ca3af;
     --fg: #000000;
     --bg2: #e9f5ff;
-    font-family: Courier, monospace;
+    font-family: "Google Sans Code", monospace;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
@@ -20,7 +22,7 @@ body.dark-mode {
     --fg: #e6e6e6;
     --muted: #555;
     --bg2: #1f3540;
-    --hg: #64689a;
+    --hg: #4d57ea;
     --bg3: linear-gradient(to bottom, #0f5f63a4, #0b16458f);
     --line: #53565bc0;
     --a: rgb(132, 192, 225);
@@ -28,7 +30,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: Courier, monospace;
+    font-family: "Google Sans Code", monospace;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
@@ -67,7 +69,7 @@ body {
 
 .navbar-button {
     color: var(--fg);
-    font-family: Courier, monospace;
+    font-family: "Google Sans Code", monospace;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
@@ -90,12 +92,11 @@ body {
 .navbar:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 10px 05px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(195, 192, 192, 0.81);
     backdrop-filter: blur(10px);
 }
 
 .navbar-button:hover {
-    background: rgba(105, 150, 232, 0.702);
+    background: rgba(123, 180, 255, 0.702);
     border-radius: 5px;
     transform: scale(1.07);
 }
@@ -128,7 +129,7 @@ body {
 
 li::marker {
     content: "‣ ";
-    color: black;
+    color: var(--fg);
 }
 
 .club-link {
@@ -157,7 +158,7 @@ li::marker {
     background-color: rgba(196, 228, 240, 0.508);
     backdrop-filter: blur(5px);
     border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .project-card .context-tag {
@@ -168,7 +169,7 @@ li::marker {
     color: #4527a0;
     padding: 3px 8px;
     border-radius: 4px;
-    margin: 10px 0 20px 0; 
+    margin: 10px 0 20px 0;
 }
 
 .project-card:nth-child(even) {
@@ -190,8 +191,7 @@ li::marker {
 .project-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops to fill the space */
-    /* OR use: object-fit: contain; to show full image with letterboxing */
+    object-fit: cover;
 }
 
 @keyframes pulse {
@@ -232,7 +232,69 @@ li::marker {
     padding: 3px 8px;
     color: var(--fg);
     background: gray;
-    
+
+}
+
+footer {
+    position: relative;
+    background: linear-gradient(to bottom, #0077be, #003d5c);
+    overflow: hidden;
+    padding-top: 170px;
+}
+
+.ocean {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%2300bfff" fill-opacity="0.5"/></svg>') repeat-x;
+    animation: wave-animation 15s linear infinite;
+}
+
+.wave2 {
+    bottom: -20px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%2300a8e8" fill-opacity="0.7"/></svg>') repeat-x;
+    animation: wave-animation 20s linear infinite reverse;
+}
+
+.wave3 {
+    bottom: -40px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%230099d1" fill-opacity="0.9"/></svg>') repeat-x;
+    animation: wave-animation 25s linear infinite;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.footer-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .music-widget {
