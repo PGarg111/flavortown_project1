@@ -297,6 +297,16 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.footer-links {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-links:hover{
+    text-decoration: underline;
+    transform: scale(1.07);
+}
+
 .music-widget {
     display: inline-block;
     background: var(--bg);
