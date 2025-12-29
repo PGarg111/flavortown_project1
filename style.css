@@ -371,29 +371,6 @@ footer {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* .skill-card {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 15px 0;
-    flex-wrap: wrap;
-}
-
-.home-card {
-    color: var(--fg2);
-    text-align: center;
-    padding: 5px 8px;
-    background: var(--bg);
-    margin-top: 10px;
-    border-radius: 8px;
-    width: 100%;
-}
-
-.home-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-} */
-
 .type {
     overflow: hidden;
     white-space: nowrap;
