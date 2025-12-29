@@ -29,7 +29,7 @@ body.dark-mode {
     --hg: #4d57ea;
     --bg3: linear-gradient(to bottom, #0f5f63a4, #0b16458f);
     --line: #53565bc0;
-    --a: rgb(132, 192, 225);
+    --a: rgb(10, 28, 38);
 
 }
 
@@ -376,8 +376,6 @@ footer {
     }
 }
 
-    
-
 .type_3 {
     overflow: hidden;
     white-space: nowrap;
@@ -399,7 +397,6 @@ footer {
     }
 }
 
-
 .type_1 {
     overflow: hidden;
     white-space: nowrap;
@@ -418,6 +415,27 @@ footer {
 
     100% {
         width: 99ch
+    }
+}
+
+.type_4 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid currentColor;
+    animation:
+        blink_1 1s steps(1, end) infinite,
+        typing_4 4s steps(100, end) forwards;
+    animation-delay: 15s;
+    animation-fill-mode: both;
+}
+
+@keyframes typing_4 {
+    0% {
+        width: 0
+    }
+
+    100% {
+        width: 100ch
     }
 }
 
@@ -461,6 +479,12 @@ footer {
     animation-delay: 14s;
 }
 
+.delay-text_5 {
+    opacity: 0;
+    animation: slide-in 0.8s ease-out forwards;
+    animation-delay: 19s;
+}
+
 @keyframes slide-in {
     0%{
         opacity: 0;
@@ -499,18 +523,28 @@ footer {
 
 #skipOverlay {
     border-radius: 8px;
-    background-color: #00b4d8; 
+    background-color: #00b4d899; 
     backdrop-filter: blur(10px);  
     border: 3px solid rgba(255, 255, 255, 0.3);
     position: fixed;
-    top: 350px;
+    top: 375px;
     left: 0;
     right: 0;
     color: var(--fg);
     padding: 15px;
     text-align: center;
     font-size: 1em;
-    animation: bouncing 3s ease-out forwards;
+    animation: bouncing 3s ease-out infinite;
+}
+
+.favicon-link{
+    text-decoration: none;
+    color: var(--a);
+}
+
+.favicon-link:hover{
+    transform: scale(1.8);
+    text-decoration: underline;
 }
 
 .music-widget {

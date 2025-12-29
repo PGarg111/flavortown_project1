@@ -108,13 +108,14 @@ document.addEventListener('keydown', (e) => {
     if (e.code === 'Space' && !animationsSkipped) {
         animationsSkipped = true;
 
-        const animatedElements = document.querySelectorAll('.type, .type_1, .type_2, .type_3, .delay-text, .delay-text_2, .delay-text_3, .delay-text_4');
+        const animatedElements = document.querySelectorAll('.type, .type_1, .type_2, .type_3, .type_4, .delay-text, .delay-text_2, .delay-text_3, .delay-text_4, .delay-text_5');
 
         animatedElements.forEach(element => {
             if (element.classList.contains('type') ||
                 element.classList.contains('type_1') ||
                 element.classList.contains('type_2') ||
-                element.classList.contains('type_3')) {
+                element.classList.contains('type_3') ||
+                element.classList.contains('type_4')) {
 
                 if (element.classList.contains('type')) {
                     element.style.width = '63ch';
@@ -124,6 +125,8 @@ document.addEventListener('keydown', (e) => {
                     element.style.width = '37ch';
                 } else if (element.classList.contains('type_3')) {
                     element.style.width = '26ch';
+                } else if (element.classList.contains('type_4')) {
+                    element.style.width = '100ch';
                 }
 
                 element.style.animation = 'blink_1 1s steps(1, end) infinite';
@@ -132,7 +135,8 @@ document.addEventListener('keydown', (e) => {
             if (element.classList.contains('delay-text') ||
                 element.classList.contains('delay-text_2') ||
                 element.classList.contains('delay-text_3') ||
-                element.classList.contains('delay-text_4')) {
+                element.classList.contains('delay-text_4') ||
+                element.classList.contains('delay-text_5')) {
                 element.style.opacity = '1';
                 element.style.transform = 'translateX(0)';
                 element.style.animation = 'none';
