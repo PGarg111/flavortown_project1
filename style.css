@@ -565,7 +565,7 @@ footer {
     width: 300%;
     height: auto;
     margin-top: 5px;
-    animation: bouncing 3s ease-in-out infinite;
+    animation: bouncing 3s ease-out infinite;
 }
 
 @keyframes bouncing {
@@ -605,56 +605,12 @@ footer {
     text-decoration: underline;
 }
 
-.skill{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 0 auto;
-}
-
-.skill-tech{
-    padding: 12px 24px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    background: #48cae4b1;
-}
-
-.skill-tech:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-}
-
-.skill-tool{
-    padding: 12px 24px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    background: #0095c7d4;
-}
-
-.skill-tool:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-}
-
-.skill-robotics{
-    padding: 12px 24px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    background: #023e8ab1;
-}
-
-.skill-robotics:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-}
-
 .highlight{
     background: linear-gradient(#0077b6, #0077b6);
     background-size: 0% 100%;
     background-repeat: no-repeat;
     background-position: left center;
-    animation: highlighted 1.5s ease-out 3s forwards;
+    animation: highlighted 1.5s ease-out 1s forwards;
     padding: 2px 4px;
 }
 
@@ -664,6 +620,69 @@ footer {
         color: white;
     }
 }
+
+.skill{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.skill-tech,
+.skill-tool,
+.skill-robotics {
+    padding: 12px 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-tech { background: #48cae4b1; }
+.skill-tool { background: #0095c7d4; }
+.skill-robotics { background: #023e8ab1; }
+
+.skill-tech:hover,
+.skill-tool:hover,
+.skill-robotics:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.popup {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00b4d83a;
+    backdrop-filter: blur(5px);
+    color: var(--fg);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    max-width: 80%;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover {
+    color: #ff6b6b;
+}
+
+.popup.show {
+    display: block;
+}
+
 
 .music-widget {
     display: inline-block;

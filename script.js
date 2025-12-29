@@ -145,7 +145,37 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-setTimeout(() => {
-    const overlay = document.getElementById('skipOverlay');
-    if (overlay) overlay.remove();
-}, 5000);
+
+
+const overlay = document.getElementById('skipOverlay');
+let overlayTimeout;
+const originalShowPage = window.showPage;
+
+window.showPage = function(pageName) {
+    originalShowPage(pageName);
+    if (pageName === 'about') {
+        overlay.style.display = 'block';
+        if (overlayTimeout) clearTimeout(overlayTimeout);
+        overlayTimeout = setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 4000);
+    } else {
+        overlay.style.display = 'none';
+        if (overlayTimeout) clearTimeout(overlayTimeout);
+    }
+};
+
+const popup = document.getElementById("popup");
+const popupContent = document.getElementById("popupContent");
+const closeBtn = document.getElementById("closeBtn");
+
+function showPopup(element) {
+    popupContent.textContent = element.getAttribute("info");
+    popup.classList.add("show");
+}
+closeBtn.addEventListener("click", () => {
+    popup.classList.remove("show");
+});
+document.querySelectorAll(".skill-tech, .skill-tool, .skill-robotics").forEach(skill => {
+    skill.addEventListener("click", () => showPopup(skill));
+});
