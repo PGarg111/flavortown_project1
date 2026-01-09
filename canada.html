@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="Untitled_design__8_-removebg-preview.png" type="image/jpg">
+    <title>My Trip to Canada</title>
+    <style>
+
+        :root{
+            background:#ade8f4;
+        }
+
+        body{
+            background: #ade8f4;
+        }
+        nav{
+            background: #caf0f8;
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top:0;
+            z-index: 100;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a{
+            background: #ade8f4;
+            text-decoration: none;
+            border-radius: 15px;
+            color: var(--fg2);
+            padding: 0.5rem 1rem;
+            
+        }
+
+        nav a:hover{
+            transform: translate(1.05);
+        }
+
+        .blog-container{
+            max-width: 900px;
+            margin: -50px auto 0;
+            padding: 50 2rem 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .header {
+            width: 90%;
+            margin-left: 25px;
+            align-items: center;
+            margin-top: -50px;
+            background: #caf0f8;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 5px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+
+        .header h1{
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #03045e;
+        }
+
+        .blog{
+            display: block;
+            gap: 5px;
+            font-size: 10px;
+            opacity: 0.9;
+            flex-wrap: wrap;
+        }
+
+        .blog span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .image-blog{
+            margin-top: 25px;
+            overflow: hidden;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .image-blog::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-content{
+            background: #ade8f4;
+            backdrop-filter: blur(10px);
+            padding: 5px;
+            border-radius: 15px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #ffd700;
+        }
+
+        .blog-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="blog-container">
+    <nav>
+        <a href="index.html">Back to Home</a>
+    </nav>
+    <div class="image-blog">
+        <img src="IMG_5742 2.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(1.1);">
+    </div>
+    <div class="header">
+        <h1>My Trip to Canada</h1>
+        <p>Welcome to my travel blog about my trip to Canada!</p>
+        <div class="blog">
+            <span>Banff, Jasper, Vancouver | </span>
+            <span>June - July 2024 | </span>
+            <span>10 days</span>
+        </div>
+    </div>
+
+    <div class="blog-content">
+        <p>This is a trip that I feel everyone should make in the next 20 years.</p>
+        <p>...That was ominous.</p>
+        <p>I'll explain everything about why, but first, I am going to recount my trip to Banff, Jasper and Vancouver in Canada!</p>
+    </div>
+
+
+</body>
+
+</html>

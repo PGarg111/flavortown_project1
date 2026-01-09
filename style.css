@@ -163,7 +163,7 @@ li::marker {
     backdrop-filter: blur(5px);
     border: 3px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 .project-card .context-tag {
@@ -313,7 +313,7 @@ footer {
     transform: scale(1.07);
 }
 
-.footer-content form{
+.footer-content form {
     max-width: 420px;
     margin: 0 auto 1.5rem;
     display: flex;
@@ -521,11 +521,12 @@ footer {
 }
 
 @keyframes slide-in {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-100px);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
@@ -546,11 +547,14 @@ footer {
 }
 
 @keyframes bouncing {
-    0%, 100%{
+
+    0%,
+    100% {
         transform: translateY(0);
         filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
     }
-    50%{
+
+    50% {
         transform: translateY(-30px);
         filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
     }
@@ -558,8 +562,8 @@ footer {
 
 #skipOverlay {
     border-radius: 8px;
-    background-color: #00b4d899; 
-    backdrop-filter: blur(10px);  
+    background-color: #00b4d899;
+    backdrop-filter: blur(10px);
     border: 3px solid rgba(255, 255, 255, 0.3);
     position: fixed;
     top: 375px;
@@ -572,17 +576,17 @@ footer {
     animation: bouncing 3s ease-out infinite;
 }
 
-.favicon-link{
+.favicon-link {
     text-decoration: none;
     color: var(--a);
 }
 
-.favicon-link:hover{
+.favicon-link:hover {
     transform: scale(1.8);
     text-decoration: underline;
 }
 
-.highlight{
+.highlight {
     background: linear-gradient(#0077b6, #0077b6);
     background-size: 0% 100%;
     background-repeat: no-repeat;
@@ -598,7 +602,7 @@ footer {
     }
 }
 
-.skill{
+.skill {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -616,9 +620,17 @@ footer {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.skill-tech { background: #48cae4b1; }
-.skill-tool { background: #0095c7d4; }
-.skill-robotics { background: #023e8ab1; }
+.skill-tech {
+    background: #48cae4b1;
+}
+
+.skill-tool {
+    background: #0095c7d4;
+}
+
+.skill-robotics {
+    background: #023e8ab1;
+}
 
 .skill-tech:hover,
 .skill-tool:hover,
@@ -639,7 +651,7 @@ footer {
     border-radius: 10px;
     display: none;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     max-width: 80%;
     text-align: center;
 }
@@ -652,6 +664,7 @@ footer {
     font-weight: bold;
     cursor: pointer;
 }
+
 .close-btn:hover {
     color: #ff6b6b;
 }
@@ -659,6 +672,107 @@ footer {
 .popup.show {
     display: block;
 }
+
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+.destination-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--fg);
+    display: block;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.destination-card:hover .card-image::before {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--fg);
+}
+
+.card-meta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #48cae4 0%, #0096c7 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: opacity 0.3s;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.read-more:hover {
+    opacity: 0.8;
+}
+
+
 
 
 .music-widget {
