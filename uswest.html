@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="Untitled_design__8_-removebg-preview.png" type="image/jpg">
+    <title>Exploring the Western United States</title>
+    <style>
+        :root {
+            background: #faedcd;
+        }
+
+        body {
+            background: #faedcd;
+        }
+
+        nav {
+            background: #dec6af;
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            background: #d4ac84;
+            text-decoration: none;
+            border-radius: 15px;
+            color: var(--fg2);
+            padding: 0.5rem 1rem;
+
+        }
+
+        nav a:hover {
+            transform: translate(1.05);
+        }
+
+        .blog-container {
+            max-width: 900px;
+            margin: -50px auto 0;
+            padding: 50 2rem 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .header {
+            width: 90%;
+            margin-left: 25px;
+            align-items: center;
+            margin-top: -50px;
+            background: #d4a373;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 5px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #03071e;
+        }
+
+        .blog {
+            display: block;
+            gap: 5px;
+            font-size: 14px;
+            opacity: 0.9;
+            flex-wrap: wrap;
+        }
+
+        .blog span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .image-blog {
+            border-radius: 5px;
+            margin-top: 25px;
+            overflow: hidden;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+
+        .image-blog::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-content {
+            background: #faedcd;
+            backdrop-filter: blur(10px);
+            padding: 5px;
+            border-radius: 15px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+
+        .blog-content p {
+            font-size: 1.0rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 3rem auto;
+            background: #caf0f8;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            transition: opacity 0.6s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-image img {
+            width: 93%;
+            height: 93%;
+            object-fit: contain;
+            filter: brightness(0.95);
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: #000000;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 2rem 1rem 1rem;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev {
+            left: 1rem;
+        }
+
+        .carousel-btn.next {
+            right: 1rem;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.8rem;
+            padding: 1.5rem;
+            justify-content: center;
+            background: #faedcd;
+            backdrop-filter: blur(10px);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.631);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #fff;
+            transform: scale(1.3);
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .image-counter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .carousel {
+                height: 450px;
+            }
+
+            .carousel-image {
+                height: 400px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+
+            .carousel-caption {
+                font-size: 0.95rem;
+                padding: 1.5rem 0.8rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="blog-container">
+    <nav>
+        <a href="index.html">Back to Home</a>
+    </nav>
+    <div class="image-blog">
+        <img src="IMG_6531.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(1.1);">
+    </div>
+    <div class="header">
+        <h1 style="margin-bottom:15px;">From Cities to Nature: the US West</h1>
+        <div class="blog">
+            <span>Las Vegas,  Zion National Park, Flagstaff, Sedona, Grand Canyon, Antelope Canyon, Phoenix, | </span>
+            <span>December 2024 | </span>
+            <span>10 days</span>
+        </div>
+    </div>
+
+    <div class="blog-content">
+        
+        <!-- <p>Below are some of the pictures that I took during the trip:</p>
+        <div class="carousel-container">
+            <div class="image-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">8</span>
+            </div>
+
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <div class="carousel-image">
+                        <img src="IMG_5742 2.jpg" alt="Moraine Lake">
+                    </div>
+                    <div class="carousel-caption">Moraine Lake - The turquoise water and mountain reflections</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_5757 2.jpg" alt="Lake Louise">
+                    </div>
+                    <div class="carousel-caption" style="padding-top: 10px;">Lake Louise during the evening
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_5705 2.jpg" alt="Peyto Lake">
+                    </div>
+                    <div class="carousel-caption">Peyto Lake - Incredible blue water from the viewpoint</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_5576 2.jpg" alt="Banff Gondola">
+                    </div>
+                    <div class="carousel-caption">View from Banff Gondola - Mountain ranges as far as the eye can see
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_7532.jpg" alt="Athabasca Glacier" style="filter: brightness(1.1);">
+                    </div>
+                    <div class="carousel-caption">Walking on Athabasca Glacier - The purest form of water!</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_5905.jpg" alt="Maligne Lake">
+                    </div>
+                    <div class="carousel-caption">Maligne Lake - Spotted grizzly and black bears on the
+                        way</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_5974.jpg" alt="Athabasca Falls">
+                    </div>
+                    <div class="carousel-caption">Athabasca Falls - Fast-moving water perfect for slow-mo videos</div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="carousel-image">
+                        <img src="canada-images/IMG_6014.jpg" alt="Vancouver Waterfront">
+                    </div>
+                    <div class="carousel-caption">Vancouver Waterfront - Metropolitan beauty after mountain adventures
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn prev" onclick="moveSlide(-1)" aria-label="Previous slide">‹</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)" aria-label="Next slide">›</button>
+
+
+        </div>
+        <div class="carousel-dots" style="margin-top: -5px;">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+        </div> -->
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function updateCounter() {
+            document.getElementById('current-slide').textContent = currentIndex + 1;
+        }
+
+        function moveSlide(direction) {
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+
+            updateCounter();
+        }
+
+        function currentSlide(index) {
+            slides[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+
+            currentIndex = index;
+
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+
+            updateCounter();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moveSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                moveSlide(1);
+            }
+        });
+
+        // Optional: Auto-advance carousel every 5 seconds
+        // Uncomment the lines below to enable auto-play
+        /*
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+        */
+    </script>
+
+</body>
+
+</html>

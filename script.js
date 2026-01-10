@@ -146,7 +146,7 @@ const overlay = document.getElementById('skipOverlay');
 let overlayTimeout;
 const originalShowPage = window.showPage;
 
-window.showPage = function(pageName) {
+window.showPage = function (pageName) {
     originalShowPage(pageName);
     if (pageName === 'about') {
         overlay.style.display = 'block';
@@ -175,7 +175,7 @@ document.querySelectorAll(".skill-tech, .skill-tool, .skill-robotics").forEach(s
     skill.addEventListener("click", () => showPopup(skill));
 });
 
-function set_title(titleName)
-{
+function set_title(titleName) {
     document.title = titleName
 }
+
