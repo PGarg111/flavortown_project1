@@ -683,7 +683,8 @@ footer {
 
 
 .destination-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: #00b4d83a;
+    border: 3px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     overflow: hidden;
@@ -759,12 +760,13 @@ footer {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1.5rem;
-    background: linear-gradient(135deg, #48cae4 0%, #0096c7 100%);
+    /* background: linear-gradient(135deg, #48cae442 0%, #0095c76f 100%); */
+    background: #0095c76f;
     color: #fff;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 15px;
     transition: opacity 0.3s;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 0.9rem;
 }
 
