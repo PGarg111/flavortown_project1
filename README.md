@@ -1,6 +1,6 @@
 # my_profile
 
-The project I have made is my personal website with a home page, an about page, and a page with the projects I've made along with my skill set. There are many animations throughout my website. The homepage features my name, that I drew) animated to bounce, the about section with a typewriter effect, and the project section which has a highlighter animation to give attention to what I used to create my projects. The footer of my website is a wave animation showing how much I like learning about the ocean and how much it fascinates me. The entire website's theme was based upon this, I used the Ocean Blue Serenity color palette from https://coolors.co/palettes/trending. This website uses HTML, CSS, and Javascript. 
+The project I have made is my personal website with a home page, an about page, a travel page, and a page with the projects I've made along with my skill set. There are many animations throughout my website. The homepage features my name, that I drew) animated to bounce, the about section with a typewriter effect, and the project section which has a highlighter animation to give attention to what I used to create my projects. The footer of my website is a wave animation showing how much I like learning about the ocean and how much it fascinates me. The entire website's theme was based upon this, I used the Ocean Blue Serenity color palette from https://coolors.co/palettes/trending. This website uses HTML, CSS, and Javascript. 
 
 The navigation bar uses fake Javascript transitions to move between the three pages.
 When you navigate between the different pages, it changes the name in the display to that. This was done with Javascript. 
@@ -10,6 +10,8 @@ I drew the art on the homepage and the favicon for the website using iArtbook.
 Another feature is in the about section. This feature shows the user what music I am currently listening to by scrobbling my YouTube Music through last.fm. This was done using Javascript, as well as the animation skip option. 
 
 On the projects page, I feature my skills. If you click on these skills, it will show a popup with more information. The project cards feature a picture of the project, a brief description, link to demo, link to Github repository, and what it was created for. There is a highlighter marker animation to put special attention to the languages or platforms used to create each project. 
+
+I added a page about travel since I love to travel. For these pages I used an image carousel with some images I took during the trips. The only blog posts I made are for my trip to Canada and western US. The card on the travel page gives you a preview and if you click on it, it takes you to another page to read the entire thing. These two posts took quite some time since I had to remember the details, thankfully I had pictures to help me. 
 
 I created this website for a fun way for someone to get to know about me. I already had a professional portfolio, but I thought that it would look better if my portfolio was something that I created. 
 
